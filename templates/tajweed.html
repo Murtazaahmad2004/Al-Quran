@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            color: #343a40;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 1%;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: black;
+            padding: 0 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 70px;
+            z-index: 100;
+            align-items: center;
+        }
+
+        .navbar-header h1 {
+            color: white;
+            font-size: 1.5em;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center; 
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-header">
+            <h1>Al-Quran Academy</h1>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Tajweed Course Details</h1>
+        <p>Our Tajweed course is designed to help you master the rules of Qur'anic recitation. Here are the key features:</p>
+        <ul>
+            <li>Learn the rules of Tajweed in a structured manner.</li>
+            <li>Practice with certified teachers who provide personalized feedback.</li>
+            <li>Interactive lessons with audio and video resources.</li>
+            <li>Flexible scheduling to fit your lifestyle.</li>
+        </ul>
+        <p>Join us to enhance your recitation skills and deepen your connection with the Qur'an!</p>
+        <h2>Course Structure</h2>
+        <p>The course is divided into several modules, each focusing on different aspects of Tajweed:</p>
+        <ul>
+            <li>Module 1: Introduction to Tajweed</li>
+            <li>Module 2: Rules of Noon and Meem</li>
+            <li>Module 3: Rules of Qalqalah</li>
+            <li>Module 4: Advanced Tajweed Techniques</li>
+            <li>Module 5: Practical Application and Recitation Practice</li>
+        </ul>
+        <p>Each module includes video lessons, quizzes, and practice sessions to ensure you grasp the concepts effectively.</p>
+        <h2>Enrollment</h2>
+        <p>To enroll in the Tajweed course, please fill below the form or contact us for more information.</p>
+        <p>We look forward to helping you on your journey to mastering the Qur'an!</p>
+
+        <h1>Student Enrollment</h1>
+        <p>Welcome to the enrollment page! Please fill out the form below to enroll in our courses.</p>
+        <form action="/tajweed" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="phone">Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" required><br><br>
+
+            <input type="submit" value="Enroll Now">
+        </form>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 Al-Quran Academy. All rights reserved.</p>
+    </div>
+</body>
+</html>

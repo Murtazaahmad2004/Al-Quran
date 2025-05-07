@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Quran Educational Institute</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mosque-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2E8B57;
+            color: white;
+        }
+        
+        /* Main Content Sections */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2E8B57;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #FFD700;
+            margin: 0.5rem auto;
+        }
+        
+        /* Appeal Section */
+        .appeal {
+            background-color: #2E8B57;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .appeal .section-title {
+            color: white;
+        }
+        
+        .appeal .section-title:after {
+            background-color: #FFD700;
+        }
+        
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .project-card h3 {
+            color: #2E8B57;
+            margin-bottom: 1rem;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card i {
+            font-size: 3rem;
+            color: #2E8B57;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .footer-links li {
+            margin: 0 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+        
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: relative;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1.3rem;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f8f8f8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 290px;
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            padding: 8px 10px;
+        }
+
+        .dropdown-menu li a {
+            color: #000;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    AL-QURAN<br>EDUCATIONAL<br>INSTITUTE
+                </div>
+                <ul class="nav-links">
+                    <li><a href="quran.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="quran.html">Courses ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tajweed.html">Tajweed Course</a></li>
+                            <li><a href="hifz.html">Hifz-ul-Quran Course</a></li>
+                            <li><a href="tafseer.html">Tafseer & Transation Course</a></li>
+                            <li><a href="nazra.html">Nazra</a></li>
+                            <li><a href="qirat.html">Qira’at</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="quran.html">Donate ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="easypaisa.html">EasyPaisa Account</a></li>
+                            <li><a href="jazzcash.html">JazzCash Account</a></li>
+                            <li><a href="bank.html">Bank Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="quran.html">Contact ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Al-Quran Educational Institute</h1>
+            <p>Preserving and teaching the Holy Quran with authentic Islamic education for all ages</p>
+            <a href="learnmore.html" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Jamia Masjid Muhammad</h2>
+            <p>Under the auspices of Jamia Masjid Muhammad, Shahzad Town, Islamabad, dozens of religious programs are currently underway, benefiting thousands of people as well as students. Additionally, hundreds of religious studies are providing religious and welfare services in various regions. You are invited to join these blessed initiatives, participate in various courses, enroll your children in our institutions, organize special prayer sessions, and offer both practical and financial support. May Allah, the Almighty, be our protector and helper.</p>
+        </div>
+    </section>
+
+    <!-- Appeal Section -->
+    <section class="appeal">
+        <div class="container">
+            <h2 class="section-title">Appeal for Donations – Help Build the House of Allah</h2>
+            <p>Under the administration of Jamia Masjid Muhammad, Shahzad Town, Islamabad, numerous religious and educational projects are ongoing, benefiting thousands of students and individuals. These institutions are dedicated to serving Islam by spreading the teachings of the Quran and Sunnah in society.</p>
+            <p>This is an opportunity for all of us to contribute to these noble causes and secure endless rewards in this life and the Hereafter. Your donations will be a source of sadaqah jariyah (continuous charity) that will benefit you even after this life.</p>
+            
+            <h3 style="margin-top: 2rem; text-align: center;">Ongoing Projects Needing Your Support</h3>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Jamia Al-Habib</h3>
+                    <p>Construction near Park View City, Islamabad (A grand project covering 7 kanals, featuring a mosque, classrooms, hostels, and residences for teachers).</p>
+                </div>
+                <div class="project-card">
+                    <h3>Quran Complex</h3>
+                    <p>Management of Quran Complex on Santa Erciano Road, Islamabad, as a center for Quranic education.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Masjid Ayesha & Seerat Complex</h3>
+                    <p>Completion on Expressway, Murree.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Masjid Hauz-e-Kausar</h3>
+                    <p>Construction near Islamabad International Airport (4-kanal project).</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="donate.html" class="btn">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-book-quran"></i>
+                    <h3>Quran Courses</h3>
+                    <p>Comprehensive Quran education with tajweed and memorization programs.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Certified Teachers</h3>
+                    <p>Learn from qualified and experienced Islamic scholars.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification</h3>
+                    <p>Recognized certification upon completion of courses.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Books & Library</h3>
+                    <p>Access to extensive Islamic literature and resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="color: white; margin-bottom: 1rem;">
+                AL-QURAN EDUCATIONAL INSTITUTE
+            </div>
+            <ul class="footer-links">
+                <li><a href="quran.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>            
+            <p>Contact us: +923331234567 | +923340987654</p>
+            <p>Email: example-alquran@gmail.com</p>
+            <p>Website: https://example-alquran.com</p>
+        </div>
+    </footer>
+</body>
+</html>
