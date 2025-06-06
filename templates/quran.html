@@ -49,10 +49,17 @@
         .nav-links {
             display: flex;
             list-style: none;
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            position: relative;
         }
         
         .nav-links li {
             margin-left: 1.5rem;
+            position: relative;
         }
         
         .nav-links a {
@@ -60,6 +67,9 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1.3rem;
         }
         
         .nav-links a:hover {
@@ -188,7 +198,7 @@
         footer {
             background-color: #333;
             color: white;
-            padding: 3rem 0;
+            padding: 1rem;
             text-align: center;
         }
 
@@ -210,26 +220,6 @@
 
         .footer-links a:hover {
             color: #FFD700;
-        }
-        
-        .nav-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            position: relative;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            padding: 5px 10px;
-            font-size: 1.3rem;
         }
 
         .dropdown-menu {
