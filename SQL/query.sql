@@ -1,3 +1,5 @@
+CREATE DATABASE al_quran;
+USE al_quran;
 CREATE TABLE tajweed (
     id INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(255) NOT NULL,

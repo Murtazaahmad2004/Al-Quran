@@ -3,64 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <title>About US</title>
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            color: #343a40;
-            padding: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 5%;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: black;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 70px;
-            z-index: 100;
-            align-items: center;
-        }
-
-        .navbar-header h1 {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .footer {
-            width: 100%;
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-        }
-
-    </style>
 </head>
 <body>
     <div class="navbar">
@@ -68,7 +12,7 @@
             <h1>Al-Quran Academy</h1>
         </div>
     </div>
-<div class="container">
+<div class="container1">
     <h1>About Us</h1>
     <p>
         Welcome to Al-Quran Academy, your trusted platform for learning and understanding the Holy Qur’an. Our mission is to make Qur’an education accessible to everyone — 
@@ -85,7 +29,7 @@
     </p>
 </div>
     <div class="footer">
-        <h3>&copy; 2023 Al-Quran Academy. All rights reserved.</h3>
+        <p>&copy; 2023 Al-Quran Academy. All rights reserved.</p>
     </div>
 </body>
 </html>

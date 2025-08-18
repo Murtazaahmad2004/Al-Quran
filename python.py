@@ -8,18 +8,12 @@ CORS(app)
 app.secret_key = '123789456'
 
 # Database Configuration
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'al_quran'
-
-# Database Connection
-db = mysql.connector.connect(
-    host=app.config['MYSQL_HOST'],
-    user=app.config['MYSQL_USER'],
-    password=app.config['MYSQL_PASSWORD'],
-    database=app.config['MYSQL_DB']
-)
+db_config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'NHA@2004',
+    'database': 'al_quran'
+}
 
 # Home Page
 @app.route('/')
@@ -90,147 +84,187 @@ def course():
 # Tajweed Page
 @app.route('/tajweed', methods=['GET', 'POST'])
 def tajweed():
+    cursor = None
+    conn = None
+    success = None
+    error = None
+
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        print("Received Data:", request.form)
-
-        if not all([name, email, phone]):
-            error = "All fields are required!"
-            return render_template('tajweed.html', error=error)
-
-        cursor = db.cursor()
         try:
-            sql = "INSERT INTO tajweed (Name, Email, Phone) VALUES (%s, %s, %s)"
-            values = (name, email, phone)
-            cursor.execute(sql, values)
-            db.commit()
-            return render_template('tajweed.html', success=True)
-        except mysql.connector.Error as e:
-            error = f"Database error: {str(e)}"
-            print(error)
-            return render_template('tajweed.html', error=error)
+            conn = mysql.connector.connect(**db_config)
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO tajweed (
+                    Name, 
+                    Email, 
+                    Phone
+                ) VALUES (%s, %s, %s)      
+            """,(
+                name, email, phone
+            ))
+            conn.commit()
+            success = "✅ Tajweed data submitted successfuly!"
+        except Exception as e:
+            error = f"❌ Failed to insert items: {e}"
         finally:
-            cursor.close()
-    return render_template('tajweed.html')
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
+
+    return render_template('tajweed.html', success=success, error=error)
 
 # Hifz Page
 @app.route('/hifz', methods=['GET', 'POST'])
 def hifzquran():
+    cursor = None
+    conn = None
+    success = None
+    error = None
+
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        print("Received Data:", request.form)
-
-        if not all([name, email, phone]):
-            error = "All fields are required!"
-            return render_template('hifz.html', error=error)
-
-        cursor = db.cursor()
         try:
-            sql = "INSERT INTO hifz (Name, Email, Phone) VALUES (%s, %s, %s)"
-            values = (name, email, phone)
-            cursor.execute(sql, values)
-            db.commit()
-            return render_template('hifz.html', success=True)
-        except mysql.connector.Error as e:
-            error = f"Database error: {str(e)}"
-            print(error)
-            return render_template('hifz.html', error=error)
+            conn = mysql.connector.connect(**db_config)
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO hifz (
+                    Name, 
+                    Email, 
+                    Phone
+                ) VALUES (%s, %s, %s)      
+            """,(
+                name, email, phone
+            ))
+            conn.commit()
+            success = "✅ Hifz data submitted successfuly!"
+        except Exception as e:
+            error = f"❌ Failed to insert items: {e}"
         finally:
-            cursor.close()
-    return render_template('hifz.html')
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
 
-# Tafseer Page
+    return render_template('hifz.html', success=success, error=error)
+
+# # Tafseer Page
 @app.route('/tafseer', methods=['GET', 'POST'])
 def tafseerquran():
+    cursor = None
+    conn = None
+    success = None
+    error = None
+
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        print("Received Data:", request.form)
-
-        if not all([name, email, phone]):
-            error = "All fields are required!"
-            return render_template('tafseer.html', error=error)
-
-        cursor = db.cursor()
         try:
-            sql = "INSERT INTO tafseer (Name, Email, Phone) VALUES (%s, %s, %s)"
-            values = (name, email, phone)
-            cursor.execute(sql, values)
-            db.commit()
-            return render_template('tafseer.html', success=True)
-        except mysql.connector.Error as e:
-            error = f"Database error: {str(e)}"
-            print(error)
-            return render_template('tafseer.html', error=error)
+            conn = mysql.connector.connect(**db_config)
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO tafseer (
+                    Name, 
+                    Email, 
+                    Phone
+                ) VALUES (%s, %s, %s)      
+            """,(
+                name, email, phone
+            ))
+            conn.commit()
+            success = "✅ Tafseer data submitted successfuly!"
+        except Exception as e:
+            error = f"❌ Failed to insert items: {e}"
         finally:
-            cursor.close()
-    return render_template('tafseer.html')
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
 
-# Nazra Page
+    return render_template('tafseer.html', success=success, error=error)
+
+# # Nazra Page
 @app.route('/nazra', methods=['GET', 'POST'])
 def nazraquran():
+    cursor = None
+    conn = None
+    success = None
+    error = None
+
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        print("Received Data:", request.form)
-
-        if not all([name, email, phone]):
-            error = "All fields are required!"
-            return render_template('nazra.html', error=error)
-
-        cursor = db.cursor()
         try:
-            sql = "INSERT INTO nazra (Name, Email, Phone) VALUES (%s, %s, %s)"
-            values = (name, email, phone)
-            cursor.execute(sql, values)
-            db.commit()
-            return render_template('nazra.html', success=True)
-        except mysql.connector.Error as e:
-            error = f"Database error: {str(e)}"
-            print(error)
-            return render_template('nazra.html', error=error)
+            conn = mysql.connector.connect(**db_config)
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO nazra (
+                    Name, 
+                    Email, 
+                    Phone
+                ) VALUES (%s, %s, %s)      
+            """,(
+                name, email, phone
+            ))
+            conn.commit()
+            success = "✅ Nazra data submitted successfuly!"
+        except Exception as e:
+            error = f"❌ Failed to insert items: {e}"
         finally:
-            cursor.close()
-    return render_template('nazra.html')
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
 
-# Qirat Page
+    return render_template('nazra.html', success=success, error=error)
+
+# # Qirat Page
 @app.route('/qirat', methods=['GET', 'POST'])
 def qiaratquran():
+    cursor = None
+    conn = None
+    success = None
+    error = None
+
     if request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
         phone = request.form.get('phone')
 
-        print("Received Data:", request.form)
-
-        if not all([name, email, phone]):
-            error = "All fields are required!"
-            return render_template('qirat.html', error=error)
-
-        cursor = db.cursor()
         try:
-            sql = "INSERT INTO qiarat (Name, Email, Phone) VALUES (%s, %s, %s)"
-            values = (name, email, phone)
-            cursor.execute(sql, values)
-            db.commit()
-            return render_template('qirat.html', success=True)
-        except mysql.connector.Error as e:
-            error = f"Database error: {str(e)}"
-            print(error)
-            return render_template('qirat.html', error=error)
+            conn = mysql.connector.connect(**db_config)
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO qiarat (
+                    Name, 
+                    Email, 
+                    Phone
+                ) VALUES (%s, %s, %s)      
+            """,(
+                name, email, phone
+            ))
+            conn.commit()
+            success = "✅ Qiarat data submitted successfuly!"
+        except Exception as e:
+            error = f"❌ Failed to insert items: {e}"
         finally:
-            cursor.close()
-    return render_template('qirat.html')
+            if cursor:
+                cursor.close()
+            if conn:
+                conn.close()
+
+    return render_template('qirat.html', success=success, error=error)
 
 if __name__ == '__main__':
     app.run(debug=True)

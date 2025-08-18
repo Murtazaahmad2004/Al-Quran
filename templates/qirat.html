@@ -3,125 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <title>Qira’at</title>
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-            color: #343a40;
-            padding: 40px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-
-        h2 {
-            color: #6c757d;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 1%;
-        }
-
-        form {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #e9ecef;
-            border-radius: 8px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: black;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 70px;
-            z-index: 100;
-            align-items: center;
-        }
-
-
-        .navbar-header h1 {
-            color: white;
-            font-size: 1.5em;
-        }
-        
-        .footer {
-            width: 100%;
-            background-color: black;
-            color: white;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .container {
-                padding: 10px;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            h2 {
-                font-size: 1.2em;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="navbar">
@@ -131,6 +14,12 @@
     </div>
     <div class="container">
         <h1>Qira’at</h1>
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            {% if success %}
+                <div class="alert alert-success">{{ success }}</div>
+            {% endif %}
         <h2>Welcome to the Qira’at Course</h2>
         <p>This course is designed to help you read and understand the Quran in its original Arabic script.</p>
         <p>We will cover the following topics:</p>
@@ -167,7 +56,7 @@
         </form>
     </div>
     <div class="footer">
-        <h3>&copy; 2023 Al-Quran Academy. All rights reserved.</h3>
+         <p>&copy; 2023 Al-Quran Academy. All rights reserved.</p>
     </div>
 </body>
 </html>

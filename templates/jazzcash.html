@@ -3,87 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
     <title>JazzCash</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 5%;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        p {
-            color: #777;
-        }
-
-        .highlight {
-            background-color: #e7f3fe;
-            border-left: 6px solid #2196F3;
-            padding: 10px;
-            margin: 20px 0;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: black;
-            padding: 0 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 70px;
-            z-index: 100;
-            align-items: center;
-        }
-
-        .navbar-header h1 {
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .footer {
-            width: 100%;
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="navbar">
@@ -91,7 +12,7 @@
             <h1>Al-Quran Academy</h1>
         </div>
     </div>
-    <div class="container">
+    <div class="container1">
         <h1>JazzCash Account Details</h1>
         <h2>JazzCash Number: 0333-7654321</h2>
         <h2>Account Holder Name: ABCD XYZ</h2>
